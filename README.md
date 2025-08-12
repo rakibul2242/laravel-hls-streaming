@@ -19,3 +19,8 @@ First: Manual FFmpeg + Video.js (foundation learning)
 Then: Laravel-FFmpeg (for production use)
 
 If you want, I can give you both versions side-by-side in one document so you learn the basics first and then see the Laravel-FFmpeg way right after. That will make you a streaming pro in 1–2 days.
+
+
+
+#command (bash)
+composer require pbmedia/laravel-ffmpeg

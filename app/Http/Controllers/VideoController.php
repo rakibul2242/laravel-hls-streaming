@@ -24,13 +24,10 @@ class VideoController extends Controller
             'video' => 'required|file|mimetypes:video/mp4,video/x-matroska,video/avi',
         ]);
 
-        // Store original video on local disk
         $originalPath = $request->file('video')->store('videos');
-
         $videoName = pathinfo($request->file('video')->getClientOriginalName(), PATHINFO_FILENAME);
-        $hlsFolder = "hls/{$videoName}";
+        $hlsFolder = "videos/hls/{$videoName}";
 
-        // Convert to HLS format using laravel-ffmpeg
         FFMpeg::fromDisk('local')
             ->open($originalPath)
             ->exportForHLS()
